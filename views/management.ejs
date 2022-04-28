@@ -1,0 +1,26 @@
+<%- include('header') %> 
+<h1 class="mainheading"> Dashboard </h1>
+<div class="mnavbar">
+    <a href="/addcourse">Add Course</a>
+    <!-- <a href="/updatecourse">Update Course</a> -->
+    <a href="/deletecourse">Delete Course</a>
+</div>
+
+
+<div class="dcontainer">
+    <div class="item">
+        <p style="font-weight: bold; font-size: 1.2rem;" >Course Name</p>
+        <p style="font-weight: bold; font-size: 1.2rem;" >Course code</p>
+        <p style="font-weight: bold; font-size: 1.2rem;" >Course faculty</p>
+    </div>
+    <% courses.forEach(function(course){ %>
+
+        <div class="item">
+            <p><%= course.name %></p>
+            <p><%= course.code %></p>
+            <p><%= course.faculty %></p>
+        </div>
+
+        <% }) %>
+</div>
+<%- include('footer') %> 

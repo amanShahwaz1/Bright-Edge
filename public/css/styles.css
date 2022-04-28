@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* navbar */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 0 5%;
+    background-color: whitesmoke;
+}
+
+.navbar .brand {
+    text-decoration: none;
+    color: rgb(27, 27, 27);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* .navlinks{
+    
+} */
+.navlinks ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.navlinks ul li {
+    list-style: none;
+}
+
+.navlinks ul li a {
+    text-decoration: none;
+    margin-left: 10px;
+    color: gray;
+    letter-spacing: 2px;
+    padding: 5px;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navlinks ul li a:hover {
+    background-color: crimson;
+    border-radius: 5px;
+    color: white;
+    transition: all ease-in 0.2s;
+}
+
+.mainheading {
+    font-family: 'Roboto', sans-serif;
+    color: rgb(28, 28, 28);
+    margin: 20px 0;
+}
+
+.coursecontainer {
+    display: flex;
+    padding: 5%;
+    flex-wrap: wrap;
+    align-items: center;
+}
+form{
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 15px;
+}
+.formlabel{
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom:10px 0;
+}
+.forminput{
+    font-size: 1.2rem;
+    padding: 3px;
+    width: 100%;
+    margin:15px 0;
+}
+.subbtn{
+    background-color: mediumseagreen;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    text-align: center;
+    padding: 7px;
+    margin:15px 0;
+}
+.subbtn:hover{
+    background-color: mediumspringgreen;
+    transition: all ease-in 0.2s;
+}
+.cancel{
+    background-color: rgb(172, 172, 172);
+    border-radius: 5px;
+    border: none;
+    padding: 7px;
+    margin:15px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.cancel:hover{
+    background-color: rgb(110, 110, 110);
+    transition: all ease-in 0.2s;
+}
+.cancel a{
+    text-decoration: none;
+    color: white;
+}
+.course {
+    font-family: 'Roboto', sans-serif;
+    height: 200px;
+    width: 200px;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-left: 5px solid crimson;
+    padding-left: 2%;
+    padding-right: 2%;
+    box-shadow: 2px 2px 6px gray;
+    margin: 20px 20px;
+}
+
+.course a {
+    text-decoration: none;
+}
+
+.course a h2 {
+    padding-top: 10%;
+    padding-bottom: 20%;
+    color: rgb(28, 28, 28);
+    border-bottom: 1px solid black;
+
+}
+
+.course a h3 {
+    padding-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(56, 55, 55);
+}
+.course a:nth-child(2){
+    background-color: mediumseagreen;
+    border-radius: 3px;
+    padding:2px 2px;
+    text-align: center;
+    color: snow;
+}
+.course a:nth-child(2):hover{
+    background-color: mediumspringgreen;
+    padding:2px 2px;
+    text-align: center;
+    color: snow;
+}
+
+.course a p {
+    color: gray;
+}
+
+.mnavbar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color:mediumseagreen;
+    height: 8vh;
+}
+.mnavbar a{
+    border:1px solid snow;
+    width: 50%;
+    text-align: center;
+    padding:2vh 0;
+    text-decoration: none;
+    color:white;    
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+}
+.mnavbar a:hover{
+    background-color: mediumspringgreen;
+    transition: all ease-in 0.2s;
+}
+.dcontainer{
+    width: 100%;
+    background-color: whitesmoke;
+
+}
+.dcontainer .item{
+    color:black;
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    height: 8vh;
+    padding-left: 2%;
+    border: 1px solid black;
+}
+.dcontainer .item p{
+    width: 30%;
+}
+
+.container {
+    margin: 0 5%;
+}
+.fade{
+    color: gray;
+    margin: 15px 0;
+}
+.delbtn{
+    background-color: rgb(211, 18, 18);
+    border-radius: 5px;
+    border: none;
+    padding: 7px;
+    margin:15px 0;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.delbtn:hover{
+    background-color: rgb(255, 4, 4);
+    transition: all ease-in 0.2s;
+}
+.content{
+    width: 100%;
+    background-color: whitesmoke;
+    border: 1px solid gray;
+    height: 8vh;
+    margin:4px 0;
+    padding-left:2%;
+    display: flex;
+    align-items: center;
+}
+.content a{
+    text-decoration: none;
+    color: rgb(35, 35, 35);
+}
+.heading{
+    color: rgb(28, 28, 28);
+}
+.page{
+    margin-top:50px;
+}
+.page h2{
+    margin:5px 0;
+    color: rgb(29, 29, 29);   
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 50px;
+}
+.page p{
+    margin:10px 0;
+    color: rgb(40, 40, 40);   
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
+    font-size: 1rem;
+    
+}
+
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .mainheading {
+        margin-top: 13px;
+        margin-left: 13px;
+        margin-bottom: 13px;
+        font-size: 1.4rem;
+    }
+    .coursecontainer {
+        display:flex;
+        flex-direction: column;
+    }
+
+    .course {
+        height: 200px;
+        width: 250px;
+    }
+
+    .course a {
+        text-decoration: none;
+    }
+
+    .course a h2 {
+        padding-top: 10%;
+        padding-bottom: 14%;
+        color: rgb(28, 28, 28);
+        border-bottom: 1px solid black;
+
+    }
+
+    .course a h3 {
+        padding-top: 2%;
+        margin-bottom: 2%;
+        color: rgb(56, 55, 55);
+    }
+
+    .course a p {
+        color: gray;
+    }
+    .mnavbar a{
+        font-size: 1.3rem;
+    }
+    .container {
+        padding-top: 1%;
+    }
+
+}

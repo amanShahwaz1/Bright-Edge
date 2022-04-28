@@ -1,0 +1,24 @@
+<%- include('header') %> 
+<h1 class="mainheading"> Update Course </h1>
+
+<% courses.forEach(function(course){ %>
+    <div class="course">
+        <a href="">
+            <h2> <%= course.name %>  </h2>
+            <h3> <%= course.faculty %>  </h3>
+            <p> <%= course.code %>  </p>
+        </a>
+    </div>
+<% }) %> 
+
+<h3>Please be careful with the case sensitivity.</h3>
+
+<form action="/updatecourse" method="post">
+    <label class="formlabel" for="code">Course code</label>
+    <input type="text" name="updatecode" class="forminput">
+    <button type="submit">Fetch Data</button>
+</form>
+<div class="cancel">
+    <a href="/management">Cancel</a>
+</div>
+<%- include('footer') %> 

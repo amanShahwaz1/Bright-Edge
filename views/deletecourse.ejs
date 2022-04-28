@@ -1,0 +1,34 @@
+<%- include('header') %> 
+<h1 class="mainheading"> Delete Courses </h1>
+
+<div class="dcontainer">
+    <div class="item">
+        <p style="font-weight: bolder;" >Course Name</p>
+        <p style="font-weight: bolder;" >Course code</p>
+        <p style="font-weight: bolder;" >Course faculty</p>
+    </div>
+    <% courses.forEach(function(course){ %>
+
+        <div class="item">
+            <p><%= course.name %></p>
+            <p><%= course.code %></p>
+            <p><%= course.faculty %></p>
+        </div>
+
+        <% }) %>
+</div>
+
+<h3 class="fade">Please be careful with the case sensitivity.</h3>
+
+
+<form action="/deletecourse" method="post">
+    <label class="formlabel" for="code">Course code</label>
+    <input type="text" name="deletecode" class="forminput">
+    <label for="deletestring" class="formlabel">Type the following to delete the course</label>
+    <input type="text" name="deletestring" class="forminput" placeholder="delete course">
+    <button type="submit" class="delbtn">Delete Course</button>
+</form>
+<div class="cancel">
+    <a href="/management">Cancel</a>
+</div>
+<%- include('footer') %> 

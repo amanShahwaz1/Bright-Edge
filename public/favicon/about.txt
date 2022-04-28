@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Italiana
+- Font Author: Copyright (c) 2011 by Santiago Orozco (hi@typemade.mx) with reserved name Italiana
+- Font Source: http://fonts.gstatic.com/s/italiana/v14/QldNNTtLsx4E__B0XTmRY31Wx7Vv.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

@@ -1,0 +1,18 @@
+<%- include('header') %> 
+<h1 class="mainheading"> Courses </h1>
+<div class="coursecontainer">
+<% courses.forEach(function(course){ %>
+
+        <div class="course">
+            <a href="/index/<%= course._id %> ">
+                <h2> <%= course.name %>  </h2>
+                <h3> <%= course.faculty %>  </h3>
+                <p> <%= course.code %>  </p>
+            </a>
+            <a href="/index/<%= course._id %>"><%= course.name %> </a>
+
+        </div>
+    
+<% }) %> 
+</div>
+<%- include('footer') %> 

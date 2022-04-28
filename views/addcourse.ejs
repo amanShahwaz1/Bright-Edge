@@ -1,0 +1,15 @@
+<%- include('header') %> 
+<h1 class="mainheading"> Add Courses </h1>
+<form action="/addcourse" method="post">
+    <label class="formlabel" for="name">Course Name</label>
+    <input type="text" class="forminput" name="name">
+    <label class="formlabel" for="code">Course code</label>
+    <input type="text" class="forminput" name="code">
+    <label class="formlabel" for="faculty">Assigned faculty</label>
+    <input type="text" class="forminput" name="faculty">
+    <button type="submit" class="subbtn">Add Course</button>
+</form>
+    <div class="cancel">
+        <a href="/management">Cancel</a>
+    </div>
+<%- include('footer') %> 
