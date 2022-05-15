@@ -64,6 +64,8 @@
     padding: 5%;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-around;
+    
 }
 form{
     font-family: 'Open Sans', sans-serif;
@@ -120,7 +122,7 @@ form{
     border: 1px solid gray;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     border-left: 5px solid crimson;
     padding-left: 2%;
     padding-right: 2%;
@@ -151,6 +153,7 @@ form{
     padding:2px 2px;
     text-align: center;
     color: snow;
+    margin-bottom: 15px;
 }
 .course a:nth-child(2):hover{
     background-color: mediumspringgreen;
@@ -199,9 +202,12 @@ form{
     height: 8vh;
     padding-left: 2%;
     border: 1px solid black;
+    font-family: 'Open Sans', sans-serif;
+
 }
 .dcontainer .item p{
     width: 30%;
+    color: rgb(80, 80, 80);
 }
 
 .container {
@@ -231,7 +237,7 @@ form{
 .content{
     width: 100%;
     background-color: whitesmoke;
-    border: 1px solid gray;
+    border: 1px solid rgb(78, 78, 78);
     height: 8vh;
     margin:4px 0;
     padding-left:2%;
@@ -240,7 +246,14 @@ form{
 }
 .content a{
     text-decoration: none;
-    color: rgb(35, 35, 35);
+    color: rgb(72, 72, 72);
+}
+.content a h2{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: rgb(50, 50, 50);
+
 }
 .heading{
     color: rgb(28, 28, 28);
@@ -259,8 +272,11 @@ form{
     color: rgb(40, 40, 40);   
     font-family: 'Open Sans', sans-serif;
     text-align: justify;
-    font-size: 1rem;
+    font-size: 1.3rem;
     
+}
+.pagebody{
+    font-size: 1.3rem;
 }
 
 
@@ -294,6 +310,7 @@ form{
         padding-bottom: 14%;
         color: rgb(28, 28, 28);
         border-bottom: 1px solid black;
+        padding-left: 20px;
 
     }
 
@@ -301,10 +318,14 @@ form{
         padding-top: 2%;
         margin-bottom: 2%;
         color: rgb(56, 55, 55);
+        padding-left: 20px;
+
     }
 
     .course a p {
         color: gray;
+        padding-left: 20px;
+
     }
     .mnavbar a{
         font-size: 1.3rem;
