@@ -1,0 +1,14 @@
+<%- include('header') %> 
+<h1 class="mainheading"> Add Management User </h1>
+
+<form action="/addmanagement" method="post">
+    <label for="mname" class="formlabel">Email</label>
+    <input type="email" class="forminput" name="mname">
+    <label for="mpass" class="formlabel">Password</label>
+    <input type="text" class="forminput" name="mpass">
+    <button type="submit" class="subbtn">Add</button>
+
+</form>
+
+
+<%- include('footer') %> 

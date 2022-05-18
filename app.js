@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const _ = require("lodash");
 const mongoose = require("mongoose");
 const { pid } = require("process");
+const { truncate } = require("lodash");
 
 
 const app = express();
@@ -32,6 +33,44 @@ const courseSchema = new mongoose.Schema({
 
 const Course = new mongoose.model('course',courseSchema);
 
+const studentSchema = new mongoose.Schema({
+    email:{
+        type:String,
+        required:true
+    },
+    password:{
+        type:String,
+        required:true
+    }
+})
+
+const Student = new mongoose.model('student',studentSchema);
+
+const facultySchema = new mongoose.Schema({
+    email:{
+        type:String,
+        required:true
+    },
+    password:{
+        type:String,
+        required:true
+    }
+})
+
+const Faculty = new mongoose.model('faculty',facultySchema);
+
+const managementSchema = new mongoose.Schema({
+    email:{
+        type:String,
+        required:true
+    },
+    password:{
+        type:String,
+        required:true
+    }
+})
+
+const Management = new mongoose.model('management',managementSchema);
 
 const contentSchema = new mongoose.Schema({
     title:{
@@ -65,7 +104,7 @@ app.get('/',function(req,res){
         {},
         function(err,courses){
             if(!err){
-                res.render('home',{
+                res.render('mainlogin',{
                     courses:courses
                 })
             }
@@ -74,6 +113,21 @@ app.get('/',function(req,res){
 })
 
 // courses routes
+
+app.get('/shome',function(req,res){
+    Course.find(
+        {},
+        function(err,courses){
+            if(!err){
+                res.render('shome',{
+                    courses:courses
+                })
+            }
+        }
+        )
+})
+
+
 app.get('/courses',function(req,res){
     Course.find(
         {},
@@ -86,6 +140,29 @@ app.get('/courses',function(req,res){
         }
         )
 })
+
+
+app.get('/fcourses',function(req,res){
+    Course.find(
+        {},
+        function(err,courses){
+            if(!err){
+                res.render('fcourses',{
+                    courses:courses
+                })
+            }
+        }
+        )
+})
+
+
+
+
+
+
+
+
+
 
 // management routes
 app.get('/management',function(req,res){
@@ -221,6 +298,16 @@ app.get("/index/:iid",function(req, res){
         }
     })
 })
+app.get("/sindex/:iid",function(req, res){
+    const iid = req.params.iid;
+    Content.find({code:iid},function(err,contents){
+        if(!err){
+            res.render('sindex',{
+                contents:contents
+            })
+        }
+    })
+})
 
 app.get("/page/:contentid",function(req,res){
     const cid = req.params.contentid;
@@ -235,6 +322,160 @@ app.get("/page/:contentid",function(req,res){
     })
 })
 
+
+
+app.get("/mainlogin",function(req,res){
+    res.render('mainlogin');
+})
+
+
+app.get("/studentlogin",function(req,res){
+    res.render('studentlogin');
+})
+
+
+app.get("/facultylogin",function(req,res){
+    res.render('facultylogin');
+})
+
+
+app.get("/managementlogin",function(req,res){
+    res.render('managementlogin');
+})
+
+
+app.get("/addstudent",function(req,res){
+    res.render('addstudent');
+})
+
+app.get("/addfaculty",function(req,res){
+    res.render('addfaculty');
+})
+
+app.post("/addstudent",function(req,res){
+
+
+    const student = new Student ({
+        email:req.body.sname,
+        password:req.body.spass
+    })
+
+    student.save(function(err){
+        if(!err){
+            res.redirect('/management')
+            console.log("Successfully added");
+        }
+        else{
+            console.log("Some error");
+        }
+    })
+    
+})
+
+
+app.get("/addmanagement",function(req,res){
+    res.render('addmanagement');
+})
+
+app.post("/addmanagement",function(req,res){
+
+
+    const management = new Management ({
+        email:req.body.mname,
+        password:req.body.mpass
+    })
+
+    management.save(function(err){
+        if(!err){
+            res.redirect('/management')
+            console.log("Successfully added");
+        }
+        else{
+            console.log("Some error");
+        }
+    })
+    
+})
+
+app.post("/addfaculty",function(req,res){
+
+
+    const faculty = new Faculty ({
+        email:req.body.fname,
+        password:req.body.fpass
+    })
+    console.log(req.body.fname)
+    console.log(req.body.fpass)
+
+    faculty.save(function(err){ 
+        if(!err){
+            res.redirect('/management')
+            console.log("Successfully added");
+        }
+        else{
+            console.log(err);
+        }
+    })
+    
+})
+
+
+app.post("/studentlogin",function(req,res){
+    const emailid = req.body.email;
+    const upass = req.body.pass;
+
+    Student.findOne({email:emailid},function(err, foundusr){
+        if(err){
+            console.log(err);
+        }
+        else{
+           if(foundusr) {
+               if(foundusr.password === upass){
+                    res.redirect("/shome");
+               }
+           }
+        }
+    })
+})
+
+
+
+app.post("/facultylogin",function(req,res){
+    const emailid = req.body.email;
+    const upass = req.body.pass;
+
+    Faculty.findOne({email:emailid},function(err, foundusr){
+        if(err){
+            console.log(err);
+        }
+        else{
+           if(foundusr) {
+               if(foundusr.password === upass){
+                    res.redirect("/fcourses");
+               }
+           }
+        }
+    })
+})
+
+
+app.post("/managementlogin",function(req,res){
+    const emailid = req.body.email;
+    const upass = req.body.pass;
+
+    Management.findOne({email:emailid},function(err, foundusr){
+        if(err){
+            console.log(err);
+        }
+        else{
+           if(foundusr) {
+               if(foundusr.password === upass){
+                    res.redirect("/");
+               }
+           }
+        }
+    })
+})
 
 app.listen('3000',function(){
     console.log('Server is active on port 3000');

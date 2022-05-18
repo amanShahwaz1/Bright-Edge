@@ -1,0 +1,13 @@
+<%- include('header') %> 
+<h1 class="mainheading"> Add Faculty User</h1>
+
+<form action="/addfaculty" method="post">
+    <label for="fname" class="formlabel">Email</label>
+    <input type="email" class="forminput" name="fname">
+    <label for="fpass" class="formlabel">Password</label>
+    <input type="text" class="forminput" name="fpass">
+    <button type="submit" class="subbtn">Add</button>
+</form>
+
+
+<%- include('footer') %> 

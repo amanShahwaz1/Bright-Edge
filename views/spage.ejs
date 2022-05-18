@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Page</title>
+</head>
+<body>
+    <div class="snavbar">
+        <h2>BrightEdge</h2>
+    </div>
+    <div class="container">
+
+
+        <div class="page">
+            <% content.forEach(function(content){ %>
+                <h2>
+                    <%- content.title %>
+                </h2>
+                <p class="pagebody">
+                    <%- content.body %>
+                </p>
+                <% }) %>
+
+        </div>
+
+
+        <script src="/javascript/main.js"></script>
+    </div>
+</body>
+</html>
