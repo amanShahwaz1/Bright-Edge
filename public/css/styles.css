@@ -15,7 +15,8 @@
     align-items: center;
     height: 10vh;
     padding: 0 5%;
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
+    background-color: mediumspringgreen;
 }
 
 .navbar .brand {
@@ -39,7 +40,8 @@
 .navlinks ul li a {
     text-decoration: none;
     margin-left: 10px;
-    color: gray;
+    color: white;
+    text-shadow: rgb(110, 110, 110);
     letter-spacing: 2px;
     padding: 5px;
     text-transform: uppercase;
@@ -171,9 +173,16 @@ form{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color:mediumseagreen;
+    background-color: mediumspringgreen;
     height: 8vh;
 }
+.mnavbar a:nth-child(2){
+    background-color: crimson;
+}
+.mnavbar a:nth-child(2):hover{
+    background-color: rgb(155, 18, 45);
+}
+
 .mnavbar a{
     border:1px solid snow;
     width: 50%;
@@ -185,7 +194,7 @@ form{
     font-size: 1.4rem;
 }
 .mnavbar a:hover{
-    background-color: mediumspringgreen;
+    background-color:mediumseagreen;
     transition: all ease-in 0.2s;
 }
 .dcontainer{
@@ -207,7 +216,7 @@ form{
 }
 .dcontainer .item p{
     width: 30%;
-    color: rgb(80, 80, 80);
+    color: white;
 }
 
 .container {
@@ -234,10 +243,13 @@ form{
     background-color: rgb(255, 4, 4);
     transition: all ease-in 0.2s;
 }
+
 .content{
     width: 100%;
     background-color: whitesmoke;
     border: 1px solid rgb(78, 78, 78);
+    border-left: 1px solid crimson;
+    border-right: 1px solid mediumspringgreen;
     height: 8vh;
     margin:4px 0;
     padding-left:2%;
