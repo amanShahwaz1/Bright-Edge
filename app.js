@@ -155,6 +155,19 @@ app.get('/fcourses',function(req,res){
         )
 })
 
+app.get('/home',function(req,res){
+    Course.find(
+        {},
+        function(err,courses){
+            if(!err){
+                res.render('home',{
+                    courses:courses
+                })
+            }
+        }
+        )
+})
+
 
 
 
@@ -470,7 +483,7 @@ app.post("/managementlogin",function(req,res){
         else{
            if(foundusr) {
                if(foundusr.password === upass){
-                    res.redirect("/");
+                    res.redirect("/home");
                }
            }
         }
